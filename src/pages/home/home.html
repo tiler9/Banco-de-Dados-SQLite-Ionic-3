@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-input placeholder="Procurar" [(ngModel)]="nomeAProcurar"></ion-input>
+    <button ion-button block (click)="procurar()">Buscar</button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<button ion-button color="danger" block (click)="deletar()">Deletar</button>
+  <ion-list>
+  Log: {{situacao}}
+  	<ion-item>
+  		<ion-label floating>Nome</ion-label>
+  		<ion-input required type="text" [(ngModel)]="nome"></ion-input>
+  	</ion-item>
+  	<ion-item>
+  		<ion-label floating>Número</ion-label>
+  		<ion-input required type="number" [(ngModel)]="numero"></ion-input>
+  	</ion-item>
+  </ion-list>
+  <button ion-button (click)="inserir()" >Salvar</button>
+  <button ion-button color="secondary" (click)="listar()" >Listar</button>
+
+  <ion-list >Lista 
+  	<ion-item *ngFor="let item of itens">
+  		<h2>Nome: {{item.nome}}</h2>
+  		<p>Numero: {{item.numero}}</p>	
+  	</ion-item>
+  </ion-list>
+</ion-content>
